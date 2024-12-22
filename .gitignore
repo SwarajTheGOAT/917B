@@ -6,6 +6,23 @@
 
 .vscode/
 
+# Compiled Object files
+*.o
+*.obj
+
+# Executables
+*.bin
+*.elf
+
+# PROS
+bin/
+.cache/
+compile_commands.json
+temp.log
+temp.errors
+*.ini
+.d/
+
 # User-specific files
 *.rsuser
 *.suo
