@@ -148,6 +148,6 @@ void opcontrol() {
     // Put more user control code here!
     // . . .
 
-    pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep this ez::util::DELAY_TIME
+    pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep ez::util::DELAY_TIME
   }
 }
