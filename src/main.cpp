@@ -158,7 +158,7 @@ void opcontrol() {
     } else {
       intake.move(0);
     }
-
+    //Ladybrown manual
     if (master.get_digital(DIGITAL_R1)){
       Lady_Brown.move(120);
     } else if (master.get_digital(DIGITAL_R2)){
@@ -166,6 +166,11 @@ void opcontrol() {
     } else {
       Lady_Brown.move(0);
     }
+        if (master.get_digital(DIGITAL_UP)){
+      Clamp.set_value(1);
+    } else if (master.get_digital(DIGITAL_DOWN)){
+      Clamp.set_value(0);
+    } 
 
 
     pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep ez::util::DELAY_TIME
