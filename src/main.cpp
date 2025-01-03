@@ -8,8 +8,8 @@
 // Chassis constructor
 ez::Drive chassis(
     // These are your drive motors, the first motor is used for sensing!
-    {10, 8, 20},     // Left Chassis Ports (negative port will reverse it!)
-    {21, 18, 16},  // Right Chassis Ports (negative port will reverse it!)
+    {-10, 8, -20},     // Left Chassis Ports (negative port will reverse it!)
+    {21, -18, 16},  // Right Chassis Ports (negative port will reverse it!)
 
     7,      // IMU Port
     3.351,  // Wheel Diameter (Remember, 4" wheels without screw holes are actually 4.125!)
@@ -128,11 +128,13 @@ void opcontrol() {
       //  * use the arrow keys to navigate the constants
       if (master.get_digital_new_press(DIGITAL_X))
         chassis.pid_tuner_toggle();
-
+      pros::lcd::print(3, "a");
       // Trigger the selected autonomous routine
       if (master.get_digital(DIGITAL_B) && master.get_digital(DIGITAL_DOWN)) {
+        pros::lcd::print(4, "b");
         autonomous();
         chassis.drive_brake_set(driver_preference_brake);
+        
       }
 
       chassis.pid_tuner_iterate();  // Allow PID Tuner to iterate
@@ -147,6 +149,13 @@ void opcontrol() {
     // . . .
     // Put more user control code here!
     // . . .
+    if (master.get_digital(DIGITAL_L1)){
+      intake.move(120);
+    } else if (master.get_digital(DIGITAL_L2)){
+      intake.move(-120);
+    } else {
+      intake.move(0);
+    }
 
     pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep ez::util::DELAY_TIME
   }

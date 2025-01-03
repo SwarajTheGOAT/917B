@@ -6,5 +6,5 @@
 
 inline pros::Motor intake(3);
 inline pros::Motor lady_brownA(1);
-inline pros::Motor lady_brownA(9);
+inline pros::Motor lady_brownB(9);
 inline pros::adi::DigitalOut Clamp('A');
