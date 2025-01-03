@@ -149,6 +149,8 @@ void opcontrol() {
     // . . .
     // Put more user control code here!
     // . . .
+
+    //Intake code
     if (master.get_digital(DIGITAL_L1)){
       intake.move(120);
     } else if (master.get_digital(DIGITAL_L2)){
@@ -156,6 +158,15 @@ void opcontrol() {
     } else {
       intake.move(0);
     }
+
+    if (master.get_digital(DIGITAL_R1)){
+      Lady_Brown.move(120);
+    } else if (master.get_digital(DIGITAL_R2)){
+      Lady_Brown.move(-120);
+    } else {
+      Lady_Brown.move(0);
+    }
+
 
     pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep ez::util::DELAY_TIME
   }
