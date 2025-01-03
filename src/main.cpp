@@ -168,9 +168,9 @@ void opcontrol() {
     }
 
     //Clamp Control
-        if (master.get_digital(DIGITAL_UP)){
+        if (master.get_digital(DIGITAL_LEFT)){
       Clamp.set_value(1);
-    } else if (master.get_digital(DIGITAL_DOWN)){
+    } else if (master.get_digital(DIGITAL_RIGHT)){
       Clamp.set_value(0);
     } 
 
