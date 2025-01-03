@@ -166,6 +166,8 @@ void opcontrol() {
     } else {
       Lady_Brown.move(0);
     }
+
+    //Clamp Control
         if (master.get_digital(DIGITAL_UP)){
       Clamp.set_value(1);
     } else if (master.get_digital(DIGITAL_DOWN)){
