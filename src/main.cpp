@@ -49,6 +49,7 @@ void initialize() {
       Auton("Motion Chaining\n\nDrive forward, turn, and come back, but blend everything together :D", motion_chaining),
       Auton("Combine all 3 movements", combining_movements),
       Auton("Interference\n\nAfter driving forward, robot performs differently if interfered or not.", interfered_example),
+      Auton("Autonomous skills test", Auton_Skills),
   });
 
   // Initialize chassis and auton selector
@@ -169,8 +170,10 @@ void opcontrol() {
 
     //Clamp Control
         if (master.get_digital(DIGITAL_LEFT)){
+          pros::lcd::print(5, "Left button on controll was pressed");
       Clamp.set_value(1);
     } else if (master.get_digital(DIGITAL_RIGHT)){
+      pros::lcd::print(6, "Right button on controller was pressed");
       Clamp.set_value(0);
     } 
 

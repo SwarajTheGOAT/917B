@@ -226,51 +226,12 @@ void interfered_example() {
 void Auton_Skills(){
   // Turn Intake on
   intake.move(127);
-
+  pros::delay(1000);
   // Back up 3 inches to the mobile goal
-  chassis.pid_drive_set(-3_in, 100);
+  /*chassis.pid_drive_set(12_in, 50);
   chassis.pid_wait();
 
-  // Clamp mogo
-  Clamp.set_value(1);
+  chassis.pid_turn_set(-90_deg, 50);
+  chassis.pid_wait_quick_chain();*/
 
-  // Turn to heading 0
-  chassis.pid_turn_set(0_deg, 100);
-  chassis.pid_wait_quick_chain();
-
-  // Drive forward 40 inches
-  chassis.pid_drive_set(40_in, 100);
-  chassis.pid_wait_quick_chain();
-
-  // Turn to heading 270
-  chassis.pid_turn_set(-90_deg, 100);
-  chassis.pid_wait_quick_chain();
-
-  // Drive forward 40 inches
-  chassis.pid_drive_set(40_in, 100);
-  chassis.pid_wait_quick_chain();
-
-  // Turn to heading 180
-  chassis.pid_turn_set(-180_deg, 100);
-  chassis.pid_wait_quick_chain();
-
-  // Drive forward 60 inches
-  chassis.pid_drive_set(60_in, 100);
-  chassis.pid_wait_quick_chain();
-
-  // Turn to heading -45
-  chassis.pid_turn_set(-45_deg, 100);
-  chassis.pid_wait_quick_chain();
-
-  // Drive forward 28 inches
-  chassis.pid_drive_set(28_in, 100);
-  chassis.pid_wait_quick_chain();
-
-  // Turn to heading 45
-  chassis.pid_turn_set(45_deg, 100);
-  chassis.pid_wait_quick_chain();
-
-  // Drive reverse 40 inches
-  chassis.pid_drive_set(-40_in, 100);
-  chassis.pid_wait_quick_chain();
 }

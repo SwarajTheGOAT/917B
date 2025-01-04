@@ -6,4 +6,4 @@
 
 inline pros::Motor intake(3);
 inline pros::MotorGroup Lady_Brown({1, -9});
-inline ez::Piston Clamp('A');
+inline pros::adi::DigitalOut Clamp('A', false);
